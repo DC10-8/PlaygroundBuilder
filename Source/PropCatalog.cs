@@ -45,6 +45,18 @@ namespace PlaygroundMod
         {
             "sign", "decal", "billboard", "marker", "landslide", "workbench", "work bench", "benchmark",
             "toilet paper", "guardrail", "guard rail", "fence post", "gate", "bus stop", "bus shelter", "timetable",
+            // 実際のアセット名で誤判定が出たもの(遊具の防護柵・回転ドア・筐体・筋トレ・犬用・ホテル)
+            "guard", "revolving", "arcade", "weighlifting", "weightlifting", "dog-park", "dog park", "hotel",
+        };
+        /// <summary>案内板から外すもの(公園以外の施設の案内板)</summary>
+        static readonly string[] s_signExclude = { "hotel", "station", "airport", "mall", "shop" };
+        /// <summary>シェルター判定から外すもの(駅・ホームの屋根、カート置き場、旗竿など)</summary>
+        static readonly string[] s_shelterExclude = { "platform", "station", "shopping", "cart", "flag", "bus", "tram", "taxi", "metro", "train" };
+        /// <summary>柵(Prop・ネットワーク)から外すもの(産業・警備・動物園・駐車場用や、支柱・角などの部品)</summary>
+        static readonly string[] s_fenceExclude =
+        {
+            "industry", "industrial", "security", "warehouse", "forestry", "farm", "zoo", "prison", "enclosure",
+            "reindeer", "bison", "antelope", "arena", "parking", "pillar", "corner", "cage", "queue", "curb only",
         };
         static readonly string[] s_toilet =
         {
@@ -193,12 +205,12 @@ namespace PlaygroundMod
             string text = Text(info);
             var s = ModSettings.Instance;
 
-            if (Any(text, s_sign, s.ExtraSignKeywords)) return PlayKind.Sign;
+            if (Any(text, s_sign, s.ExtraSignKeywords) && !Any(text, s_signExclude, null)) return PlayKind.Sign;
             if (Any(text, s_exclude, s.ExcludeKeywords)) return null;
             if (Any(text, s_toilet, s.ExtraToiletKeywords)) return PlayKind.Toilet;
             if (Any(text, s_drink, s.ExtraDrinkKeywords)) return PlayKind.Drink;
-            if (Any(text, s_shelter, s.ExtraShelterKeywords)) return PlayKind.Shelter;
-            if (Any(text, s_fence, s.ExtraFenceKeywords)) return PlayKind.Fence;
+            if (Any(text, s_shelter, s.ExtraShelterKeywords) && !Any(text, s_shelterExclude, null)) return PlayKind.Shelter;
+            if (Any(text, s_fence, s.ExtraFenceKeywords)) return Any(text, s_fenceExclude, null) ? (PlayKind?)null : PlayKind.Fence;
             if (Any(text, s_picnic, s.ExtraPicnicKeywords)) return PlayKind.Picnic;
             if (Any(text, new string[0], s.ExtraWaterPlayKeywords)) return PlayKind.WaterPlay;
             foreach (var rule in s_rules)
@@ -337,7 +349,7 @@ namespace PlaygroundMod
             string text = Text(info);
             if (Any(text, new string[0], s.ExtraFenceNetKeywords)) return true;
             if (!Any(text, s_fence, null)) return false;
-            if (Any(name, s_netExclude, null) || Any(name, s_exclude, s.ExcludeKeywords)) return false;
+            if (Any(name, s_netExclude, null) || Any(name, s_exclude, s.ExcludeKeywords) || Any(text, s_fenceExclude, null)) return false;
             return !HasVehicleLane(info);
         }
 
@@ -346,6 +358,7 @@ namespace PlaygroundMod
             string name = (info.name ?? "").ToLowerInvariant();
             if (!name.Contains("pedestrian") && !name.Contains("footpath") && !name.Contains("park path")) return false;
             if (Any(name, s_netExclude, null)) return false;
+            if (name.Contains("connection") || name.Contains("invisible")) return false; // 建物内部の接続用・見えない歩道
             if (HasVehicleLane(info)) return false;
             if (info.m_lanes == null || !info.m_lanes.Any(l => (l.m_laneType & NetInfo.LaneType.Pedestrian) != 0)) return false;
             return true;
