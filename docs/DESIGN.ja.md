@@ -22,7 +22,7 @@
 
 ## ワークショップ用ファイル
 - `Workshop/PreviewImage.png`（644×360）: ワークショップとコンテンツマネージャーに出るアイコン。ビルド時にModsフォルダへ一緒にコピーされる。元データは `Workshop/PreviewImage.svg`
-- `Workshop/WorkshopDescription.txt`: ワークショップの説明文（日英、Steam BBCode、2,639字）
+- `Workshop/WorkshopDescription.txt`: ワークショップの説明文（日英、Steam BBCode、3,041字、GitHubへのリンク付き）
 
 ## 操作
 | 操作 | 内容 |

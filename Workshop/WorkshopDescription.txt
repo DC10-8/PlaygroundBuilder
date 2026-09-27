@@ -35,6 +35,10 @@
 [h3]注意[/h3]
 Harmony が必要です。日本語の表示には日本語フォントのMOD（日本語化MODなど）が必要です。
 
+[h3]ソースコード[/h3]
+ソースコードは GitHub で公開しています（MITライセンス）。不具合の報告や改善の提案もこちらへどうぞ。
+[url=https://github.com/DC10-8/PlaygroundBuilder]https://github.com/DC10-8/PlaygroundBuilder[/url]
+
 [h2]■ English[/h2]
 Drag an area with the mouse and a complete park is built automatically: play equipment, benches, toilets, paths, trees and a fence. Nearby residents, mostly children, actually come to play on the swings and slides and rest on the benches.
 
@@ -69,3 +73,7 @@ The number of props found is written to output_log.txt. Unrecognized assets can 
 
 [h3]Notes[/h3]
 Requires Harmony. Japanese text needs a Japanese font mod.
+
+[h3]Source code[/h3]
+The source code is available on GitHub under the MIT license. Bug reports and suggestions are welcome there.
+[url=https://github.com/DC10-8/PlaygroundBuilder]https://github.com/DC10-8/PlaygroundBuilder[/url]
