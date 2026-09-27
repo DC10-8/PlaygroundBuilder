@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="644" height="360" viewBox="0 0 644 360">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6cc4f5"/>
+      <stop offset="1" stop-color="#d8f1ff"/>
+    </linearGradient>
+    <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8fd35f"/>
+      <stop offset="1" stop-color="#5caf3c"/>
+    </linearGradient>
+    <linearGradient id="slide" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffd84a"/>
+      <stop offset="1" stop-color="#f5a623"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#0b3556" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- 空 -->
+  <rect width="644" height="360" fill="url(#sky)"/>
+  <circle cx="598" cy="52" r="30" fill="#ffe27a"/>
+  <circle cx="598" cy="52" r="22" fill="#ffd23f"/>
+  <g fill="#ffffff" opacity="0.9">
+    <ellipse cx="455" cy="62" rx="38" ry="13"/><ellipse cx="480" cy="54" rx="24" ry="14"/>
+    <ellipse cx="300" cy="36" rx="30" ry="10"/><ellipse cx="318" cy="30" rx="18" ry="10"/>
+  </g>
+
+  <!-- 奥の木 -->
+  <g>
+    <rect x="596" y="150" width="8" height="40" fill="#7a5230"/>
+    <circle cx="600" cy="140" r="30" fill="#3f9a45"/><circle cx="586" cy="150" r="20" fill="#4fae52"/>
+    <rect x="517" y="150" width="7" height="34" fill="#7a5230"/>
+    <circle cx="520" cy="140" r="22" fill="#3f9a45"/><circle cx="531" cy="148" r="14" fill="#4fae52"/>
+  </g>
+
+  <!-- 地面 -->
+  <path d="M0 250 C 150 225, 330 238, 644 222 L 644 360 L 0 360 Z" fill="url(#grass)"/>
+  <!-- 園路 -->
+  <path d="M300 360 C 318 320, 360 292, 440 280 L 470 284 C 400 298, 360 322, 352 360 Z" fill="#e9dcc0"/>
+
+  <!-- ブランコ -->
+  <g stroke-linecap="round">
+    <g stroke="#e2465a" stroke-width="7">
+      <line x1="372" y1="168" x2="350" y2="276"/><line x1="372" y1="168" x2="396" y2="276"/>
+      <line x1="480" y1="168" x2="458" y2="276"/><line x1="480" y1="168" x2="504" y2="276"/>
+    </g>
+    <line x1="366" y1="168" x2="486" y2="168" stroke="#c7334a" stroke-width="9"/>
+    <g stroke="#6b6b6b" stroke-width="2.5">
+      <line x1="398" y1="172" x2="398" y2="236"/><line x1="418" y1="172" x2="418" y2="236"/>
+      <line x1="440" y1="172" x2="452" y2="232"/><line x1="458" y1="172" x2="472" y2="230"/>
+    </g>
+    <rect x="393" y="234" width="30" height="6" rx="2" fill="#3a78c2"/>
+    <rect x="448" y="229" width="28" height="6" rx="2" fill="#3a78c2" transform="rotate(-10 462 232)"/>
+    <!-- ブランコの子ども -->
+    <circle cx="462" cy="206" r="8" fill="#f2c7a2"/>
+    <path d="M454 214 h16 l2 16 h-20 z" fill="#ff7b54"/>
+  </g>
+
+  <!-- 滑り台 -->
+  <g stroke-linecap="round">
+    <path d="M556 150 L 578 132 L 600 150 Z" fill="#e2465a"/>
+    <line x1="560" y1="152" x2="560" y2="278" stroke="#3a78c2" stroke-width="6"/>
+    <line x1="596" y1="152" x2="596" y2="278" stroke="#3a78c2" stroke-width="6"/>
+    <rect x="554" y="182" width="48" height="8" rx="2" fill="#2f63a3"/>
+    <g stroke="#3a78c2" stroke-width="3">
+      <line x1="606" y1="186" x2="628" y2="278"/><line x1="620" y1="182" x2="640" y2="270"/>
+      <line x1="610" y1="204" x2="626" y2="200"/><line x1="614" y1="222" x2="630" y2="218"/>
+      <line x1="618" y1="240" x2="634" y2="236"/><line x1="622" y1="258" x2="638" y2="254"/>
+    </g>
+    <path d="M556 188 C 536 206, 530 250, 506 272 L 520 280 C 544 258, 552 214, 568 196 Z" fill="url(#slide)" stroke="#d98a12" stroke-width="1.5"/>
+    <!-- 滑る子ども -->
+    <circle cx="540" cy="224" r="7.5" fill="#f2c7a2"/>
+    <path d="M534 231 h13 l4 13 h-19 z" fill="#8a5cf6"/>
+  </g>
+
+  <!-- 手前の柵 -->
+  <g>
+    <rect x="0" y="306" width="300" height="6" fill="#b87333"/>
+    <rect x="0" y="324" width="300" height="6" fill="#b87333"/>
+    <rect x="356" y="306" width="288" height="6" fill="#b87333"/>
+    <rect x="356" y="324" width="288" height="6" fill="#b87333"/>
+    <g fill="#d6904c" stroke="#9c5f27" stroke-width="1.2">
+      <path d="M8 300 l7 -8 l7 8 v46 h-14 z"/><path d="M50 300 l7 -8 l7 8 v46 h-14 z"/>
+      <path d="M92 300 l7 -8 l7 8 v46 h-14 z"/><path d="M134 300 l7 -8 l7 8 v46 h-14 z"/>
+      <path d="M176 300 l7 -8 l7 8 v46 h-14 z"/><path d="M218 300 l7 -8 l7 8 v46 h-14 z"/>
+      <path d="M260 300 l7 -8 l7 8 v46 h-14 z"/><path d="M286 300 l7 -8 l7 8 v46 h-14 z"/>
+      <path d="M358 300 l7 -8 l7 8 v46 h-14 z"/><path d="M400 300 l7 -8 l7 8 v46 h-14 z"/>
+      <path d="M442 300 l7 -8 l7 8 v46 h-14 z"/><path d="M484 300 l7 -8 l7 8 v46 h-14 z"/>
+      <path d="M526 300 l7 -8 l7 8 v46 h-14 z"/><path d="M568 300 l7 -8 l7 8 v46 h-14 z"/>
+      <path d="M610 300 l7 -8 l7 8 v46 h-14 z"/>
+    </g>
+  </g>
+
+  <!-- ベンチ -->
+  <g>
+    <rect x="160" y="262" width="54" height="7" rx="2" fill="#9c5f27"/>
+    <rect x="160" y="252" width="54" height="5" rx="2" fill="#b87333"/>
+    <rect x="165" y="269" width="4" height="12" fill="#6b4220"/><rect x="205" y="269" width="4" height="12" fill="#6b4220"/>
+  </g>
+
+  <!-- タイトル (縁取り → 塗り の2層) -->
+  <g font-family="Noto Sans CJK JP" font-weight="900">
+    <g filter="url(#shadow)">
+      <rect x="26" y="24" width="138" height="30" rx="15" fill="#e2465a"/>
+    </g>
+    <text x="95" y="45" font-size="16" fill="#ffffff" text-anchor="middle" letter-spacing="1">CS1 MOD</text>
+    <g filter="url(#shadow)" fill="#1f5c8f" stroke="#1f5c8f" stroke-width="8" stroke-linejoin="round">
+      <text x="26" y="112" font-size="50" letter-spacing="-0.5">Playground</text>
+      <text x="26" y="168" font-size="50" letter-spacing="-0.5">Builder</text>
+      <text x="28" y="214" font-size="32">公園ビルダー</text>
+    </g>
+    <g>
+      <text x="26" y="112" font-size="50" letter-spacing="-0.5" fill="#ffffff">Playground</text>
+      <text x="26" y="168" font-size="50" letter-spacing="-0.5" fill="#ffffff">Builder</text>
+      <text x="28" y="214" font-size="32" fill="#ffde3b">公園ビルダー</text>
+    </g>
+  </g>
+</svg>

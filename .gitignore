@@ -1,0 +1,23 @@
+# Build output
+bin/
+obj/
+*.dll
+*.pdb
+*.exe
+
+# IDE / tooling
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userprefs
+*.DotSettings.user
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Game assemblies must never be committed (copyrighted, referenced from the local install)
+Cities_Data/
+Managed/

@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Game install path. Override without editing this file:
+      dotnet build -c Release -p:CitiesPath="D:\SteamLibrary\steamapps\common\Cities_Skylines"
+    or set the CITIES_SKYLINES_PATH environment variable.
+  -->
+  <PropertyGroup>
+    <TargetFramework>net35</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>PlaygroundMod</AssemblyName>
+    <RootNamespace>PlaygroundMod</RootNamespace>
+    <Deterministic>false</Deterministic>
+    <AssemblyVersion>1.0.*</AssemblyVersion>
+    <CitiesPath Condition="'$(CitiesPath)'=='' And '$(CITIES_SKYLINES_PATH)'!=''">$(CITIES_SKYLINES_PATH)</CitiesPath>
+    <CitiesPath Condition="'$(CitiesPath)'==''">C:\Program Files (x86)\Steam\steamapps\common\Cities_Skylines</CitiesPath>
+    <ManagedDir>$(CitiesPath)\Cities_Data\Managed</ManagedDir>
+    <ModDir>$(LOCALAPPDATA)\Colossal Order\Cities_Skylines\Addons\Mods\$(AssemblyName)</ModDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CitiesHarmony.API" Version="2.2.0" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
+  <!-- Game assemblies are referenced from your install and are never copied or committed. -->
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp"><HintPath>$(ManagedDir)\Assembly-CSharp.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="ColossalManaged"><HintPath>$(ManagedDir)\ColossalManaged.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="ICities"><HintPath>$(ManagedDir)\ICities.dll</HintPath><Private>False</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(ManagedDir)\UnityEngine.dll</HintPath><Private>False</Private></Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Workshop\**" />
+    <None Include="docs\**" />
+  </ItemGroup>
+
+  <!-- Copy the built mod and its Workshop preview into the local Mods folder. -->
+  <Target Name="DeployMod" AfterTargets="Build">
+    <ItemGroup>
+      <ModFiles Include="$(TargetDir)$(AssemblyName).dll;$(TargetDir)CitiesHarmony.API.dll;$(ProjectDir)Workshop\PreviewImage.png" />
+    </ItemGroup>
+    <Copy SourceFiles="@(ModFiles)" DestinationFolder="$(ModDir)" />
+  </Target>
+
+</Project>

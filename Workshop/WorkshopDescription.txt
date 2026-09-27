@@ -1,0 +1,71 @@
+[h1]公園ビルダー / Playground Builder[/h1]
+
+[h2]■ 日本語[/h2]
+マウスで範囲を指定するだけで、遊具・ベンチ・トイレ・園路・植木・柵のそろった公園を自動で作ります。近所の住民（おもに子ども）が実際にやって来て、ブランコをこぎ、滑り台を滑り、ベンチで休みます。
+
+[h3]主な機能[/h3]
+[list]
+[*]中央の広場から入口へ園路を通し、エリアを「大型遊具」「幼児用」「水遊び・砂場」「芝生」のゾーンに分けて配置
+[*]設置するたびに遊具の組み合わせと入口の位置が変わる
+[*]入口にトイレと案内板、外周に植木と柵（柵ネットワーク優先）
+[*]柵と園路は地形に沿って敷設
+[*]公園の中には住宅などの建物が建たず、ゾーンも消える
+[*]オプション画面で日本語と英語をすぐ切り替え可能
+[/list]
+
+[h3]事前の準備（重要）[/h3]
+公園の中身は、読み込まれているPropを名前で探して使います。バニラには遊具がほとんど無いので、先にワークショップで次のアセットを購読してください。
+[list]
+[*]遊具Prop（ブランコ、滑り台、シーソー、砂場、ジャングルジム、複合遊具など）※必須
+[*]ベンチ、トイレ、東屋・パーゴラ、ピクニックテーブル、水飲み、案内板のProp
+[*]柵のネットワークまたは柵のProp
+[/list]
+見つかった数は output_log.txt に出ます。名前で判定できないアセットは、設定ファイルにキーワードを追加すれば使えます。
+
+[h3]操作方法[/h3]
+[list]
+[*]画面左上の「公園」ボタン、または Ctrl+P でツールを開く
+[*]ドラッグ：四角形の範囲で作成
+[*]クリックで頂点を追加し、始点クリックか右クリックで確定：多角形の範囲で作成
+[*]公園の上で R：別の組み合わせで作り直す
+[*]公園の上で Delete：公園を削除
+[*]Esc：入力の取り消し・ツールの終了
+[/list]
+
+[h3]注意[/h3]
+Harmony が必要です。日本語の表示には日本語フォントのMOD（日本語化MODなど）が必要です。
+
+[h2]■ English[/h2]
+Drag an area with the mouse and a complete park is built automatically: play equipment, benches, toilets, paths, trees and a fence. Nearby residents, mostly children, actually come to play on the swings and slides and rest on the benches.
+
+[h3]Features[/h3]
+[list]
+[*]Paths lead from the entrances to a central plaza. The area is split into zones: active play, toddlers, water/sand and lawn.
+[*]Each build uses a different set of props and entrance positions.
+[*]Toilets and signs at the entrances, a tree ring and a fence around the edge (fence networks preferred).
+[*]The fence and paths follow the terrain.
+[*]Houses and other growables cannot be built inside a park, and zoning there is removed.
+[*]Switch between English and Japanese instantly in the options.
+[/list]
+
+[h3]Before you start (important)[/h3]
+The mod finds props by name among the loaded assets. The base game has almost no playground equipment, so subscribe to these first:
+[list]
+[*]Playground props (swings, slides, seesaws, sandboxes, climbing frames, play structures). Required.
+[*]Bench, toilet, shelter/pergola, picnic table, drinking fountain and park sign props
+[*]A fence network or fence props
+[/list]
+The number of props found is written to output_log.txt. Unrecognized assets can be added with keywords in the settings file.
+
+[h3]Controls[/h3]
+[list]
+[*]Open the tool with the "Park" button (top left) or Ctrl+P
+[*]Drag: build in a rectangle
+[*]Click to add points, then click the first point or right-click: build in a polygon
+[*]R over a park: rebuild with a new set
+[*]Delete over a park: remove it
+[*]Esc: cancel input / close the tool
+[/list]
+
+[h3]Notes[/h3]
+Requires Harmony. Japanese text needs a Japanese font mod.
